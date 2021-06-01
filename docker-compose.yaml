@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+  webapp:
+    restart: always
+    build:
+      context: ./webapp
+    command: ["./bootapp.sh"]
+    volumes:
+      - egr_media:/var/www/media
+      - egr_static:/var/www/static
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    volumes:
+      - egr_media:/var/www/media
+      - egr_static:/var/www/static
+
+volumes:
+  egr_media:
+    external: false
+  egr_static:
+    external: false
