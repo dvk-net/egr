@@ -7,8 +7,8 @@
     <h1>EGR</h1>
     <h4>Показать данные за:</h4>
     <ul>
-        <li><a href="?period=1">За вчера</a></li>
-        <li><a href="?period=2">За предыдущую неделю</a></li>
+        <li><a href="{% url 'result' %}?period=1">За вчера</a></li>
+        <li><a href="{% url 'result' %}?period=2">За предыдущую неделю</a></li>
     </ul>
 
     <h5>Данные в таблице представлены за <b>{{start_date}} - {{stop_date}}</b></h5>

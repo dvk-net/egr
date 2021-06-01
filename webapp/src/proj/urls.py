@@ -20,4 +20,5 @@ from egr import views as egr_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', egr_views.Home.as_view(), name="home"),
+    path('/data', egr_views.Result.as_view(), name="result"),
 ]
