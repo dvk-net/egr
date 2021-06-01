@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-ffxj1641i!l0)tlo-=%ta^10nu%y4e09*(0rr#-)suln1^w)wq
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['rumas-mega-service.tk:8081']
 
 
 # Application definition
