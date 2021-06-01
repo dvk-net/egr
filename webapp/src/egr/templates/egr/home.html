@@ -10,27 +10,6 @@
         <li><a href="?period=1">За вчера</a></li>
         <li><a href="?period=2">За предыдущую неделю</a></li>
     </ul>
-
-    <h5>Данные в таблице представлены за <b>{{start_date}} - {{stop_date}}</b></h5>
-        <table class="table" id="table">
-            <thead>
-                <tr>
-                <th scope="col">Рег. номер</th>
-                <th scope="col">Место регистрации</th>
-                <th scope="col">Наименование</th>
-                <th scope="col">Телефоны</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for row in a_list %}
-                <tr>
-                <th scope="row">{{ row.ngrn }}</th>
-                <td>{{ row.vnuzp }}</td>
-                <td>{{ row.vnaim }}</td>
-                <td>{{ row.vtels }}</td>
-                </tr>
-            {% endfor %}
-        </table>
 {% endblock body %}
 {% block custom_scripts %}
 <script>

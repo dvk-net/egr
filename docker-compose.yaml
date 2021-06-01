@@ -14,12 +14,11 @@ services:
     build:
       context: ./nginx
     ports:
-      - "80:80"
+      - "8081:8081"
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     volumes:
       - egr_media:/var/www/media
       - egr_static:/var/www/static
-
 volumes:
   egr_media:
     external: false

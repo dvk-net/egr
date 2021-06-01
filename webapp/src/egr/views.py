@@ -6,6 +6,9 @@ from . import utils
 one_day_delta = datetime.timedelta(days=1)
 class Home(TemplateView):
     template_name="egr/home.html"
+    
+class Result(TemplateView):
+    template_name="egr/result.html"
 
     def get_context_data(self, **kwargs):
         period = self.request.GET.get('period', 1)
