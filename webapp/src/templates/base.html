@@ -69,6 +69,20 @@
     <script src="{% static 'js/datatables.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
     <script src="{% static 'js/bootstrap-datepicker.ru.min.js' %}"></script>
+        <script>
+          $(document).ready(function() {
+          $('#table').DataTable({
+          dom: 'Bfrtip',
+              buttons: [
+                  'copy', 'csv', 'excel', 'pdf'
+              ]
+          });
+              } );
+              $('.dateinput').datepicker({
+          format: 'dd.mm.yyyy',
+          language: 'ru-ru'
+              });
+        </script>
     {% block custom_scripts %}{% endblock custom_scripts %}
   
 </body>

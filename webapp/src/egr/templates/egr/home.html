@@ -1,38 +1,13 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 {% block title %}Home EGR{% endblock title %}
 
 
 
 {% block body %}
     <h1>EGR</h1>
-    <h4>Показать на дату</h4>
-    <form action="{% url 'result' %}" method="get">
-        {{ date_form|crispy }}
-        <p></p>
-        <button type="submit" class="btn btn-sm btn-success">ok</button>
-        <hr>
-    </form>
-    <h4>Показать данные за:</h4>
-    <ul>
-        <li><a href="{% url 'result' %}?period=1">За вчера</a></li>
-        <li><a href="{% url 'result' %}?period=2">За предыдущую неделю</a></li>
-    </ul>
+    {% include './search_form.html' %}
+
 {% endblock body %}
 {% block custom_scripts %}
-<script>
-    $(document).ready(function() {
-        $('#table').DataTable({
-        dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf'
-            ]
-        });
-    } );
-    $('.dateinput').datepicker({
-        format: 'dd.mm.yyyy',
-        language: 'ru-ru'
-    });
-</script>
 {% endblock custom_scripts %}
 
